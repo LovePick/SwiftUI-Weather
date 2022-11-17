@@ -8,7 +8,7 @@
 import Foundation
 enum Coordinates {
     // MARK: - Coordinates
-    struct Coordinate: Codable {
+    struct Coordinate: Codable, Hashable {
         let name: String
         let localNames: [String: String]?
         let lat, lon: Double

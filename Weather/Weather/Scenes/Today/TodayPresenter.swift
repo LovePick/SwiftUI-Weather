@@ -23,7 +23,8 @@ class TodayPresenter {
 extension TodayPresenter: TodayPresentationLogic {
     
     func presentCityList(response: TodayModel.FetchCity.Response) {
-        
+        print("presentCityList: \(response.coordinates.count)")
+        view?.updateSearchResult(cityList: response.coordinates)
     }
     
     func presentCurrentWeather(response: TodayModel.FetchWeather.Response) {

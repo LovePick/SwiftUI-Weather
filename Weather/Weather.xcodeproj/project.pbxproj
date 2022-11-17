@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		C16690202925CF77001C12DD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C166901F2925CF77001C12DD /* Webservice.swift */; };
 		C16690302925D40F001C12DD /* TodayInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C166902F2925D40F001C12DD /* TodayInteractorTests.swift */; };
+		C16690332925E4E9001C12DD /* MockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16690322925E4E9001C12DD /* MockupData.swift */; };
+		C166903529261237001C12DD /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C166903429261237001C12DD /* SearchBarView.swift */; };
+		C166903829261F8E001C12DD /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C166903729261F8E001C12DD /* UIApplication.swift */; };
+		C166903A292622CD001C12DD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1669039292622CD001C12DD /* Constant.swift */; };
+		C166903C292637FA001C12DD /* WeatherDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C166903B292637FA001C12DD /* WeatherDataStore.swift */; };
 		C1F0D2B1292532F7006329C9 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F0D2B0292532F7006329C9 /* WeatherApp.swift */; };
 		C1F0D2B3292532F7006329C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F0D2B2292532F7006329C9 /* ContentView.swift */; };
 		C1F0D2B5292532FA006329C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F0D2B4292532FA006329C9 /* Assets.xcassets */; };
@@ -38,6 +43,11 @@
 		C166901F2925CF77001C12DD /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		C16690252925D3A8001C12DD /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C166902F2925D40F001C12DD /* TodayInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractorTests.swift; sourceTree = "<group>"; };
+		C16690322925E4E9001C12DD /* MockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupData.swift; sourceTree = "<group>"; };
+		C166903429261237001C12DD /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		C166903729261F8E001C12DD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		C1669039292622CD001C12DD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C166903B292637FA001C12DD /* WeatherDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataStore.swift; sourceTree = "<group>"; };
 		C1F0D2AD292532F7006329C9 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F0D2B0292532F7006329C9 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		C1F0D2B2292532F7006329C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +99,22 @@
 			path = TodayTest;
 			sourceTree = "<group>";
 		};
+		C16690312925DDCD001C12DD /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C166903429261237001C12DD /* SearchBarView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		C166903629261F70001C12DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C166903729261F8E001C12DD /* UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C1F0D2A4292532F7006329C9 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F0D2C629253691006329C9 /* Info.plist */,
+				C166903629261F70001C12DD /* Extensions */,
 				C1F0D2CE2925460E006329C9 /* Models */,
 				C1F0D2CB2925377D006329C9 /* Utils */,
 				C1F0D2BE292533C6006329C9 /* Scenes */,
@@ -141,6 +168,7 @@
 		C1F0D2BF2925356A006329C9 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				C16690312925DDCD001C12DD /* Component */,
 				C1F0D2C0292535A8006329C9 /* TodayView.swift */,
 				C1F0D2C229253609006329C9 /* TodayInteractor.swift */,
 				C1F0D2C429253650006329C9 /* TodayPresenter.swift */,
@@ -155,6 +183,8 @@
 			children = (
 				C1F0D2CC292537D9006329C9 /* AppEnvironment.swift */,
 				C166901F2925CF77001C12DD /* Webservice.swift */,
+				C16690322925E4E9001C12DD /* MockupData.swift */,
+				C1669039292622CD001C12DD /* Constant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -165,6 +195,7 @@
 				C1F0D2CF2925464C006329C9 /* Weather.swift */,
 				C1F0D2D129254819006329C9 /* Forecast.swift */,
 				C1F0D2D3292549AC006329C9 /* Coordinates.swift */,
+				C166903B292637FA001C12DD /* WeatherDataStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,12 +312,17 @@
 				C1F0D2C329253609006329C9 /* TodayInteractor.swift in Sources */,
 				C1F0D2CA292536D1006329C9 /* TodayRouter.swift in Sources */,
 				C1F0D2B3292532F7006329C9 /* ContentView.swift in Sources */,
+				C166903A292622CD001C12DD /* Constant.swift in Sources */,
+				C166903829261F8E001C12DD /* UIApplication.swift in Sources */,
 				C1F0D2C1292535A8006329C9 /* TodayView.swift in Sources */,
 				C1F0D2D229254819006329C9 /* Forecast.swift in Sources */,
 				C1F0D2D02925464C006329C9 /* Weather.swift in Sources */,
 				C1F0D2C529253650006329C9 /* TodayPresenter.swift in Sources */,
 				C1F0D2D4292549AC006329C9 /* Coordinates.swift in Sources */,
+				C16690332925E4E9001C12DD /* MockupData.swift in Sources */,
+				C166903C292637FA001C12DD /* WeatherDataStore.swift in Sources */,
 				C1F0D2CD292537D9006329C9 /* AppEnvironment.swift in Sources */,
+				C166903529261237001C12DD /* SearchBarView.swift in Sources */,
 				C16690202925CF77001C12DD /* Webservice.swift in Sources */,
 				C1F0D2B1292532F7006329C9 /* WeatherApp.swift in Sources */,
 				C1F0D2C8292536C0006329C9 /* TodayModel.swift in Sources */,
@@ -482,8 +518,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,8 +548,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

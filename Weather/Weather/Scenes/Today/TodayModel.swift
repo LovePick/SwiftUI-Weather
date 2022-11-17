@@ -32,6 +32,6 @@ enum TodayModel {
     }
     
     struct ViewModel {
-        
+       
     }
 }

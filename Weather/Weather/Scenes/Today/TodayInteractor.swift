@@ -25,7 +25,6 @@ class TodayInteractor {
         self.config = config
     }
     
-    
     // MARK: - ACTION
     func handleError(error:NetworkError) {
         presenter?.presentError(response: error)
@@ -47,10 +46,11 @@ class TodayInteractor {
 extension TodayInteractor: TodayBusinessLogic{
     func fetchCityLocation(city: String) {
         
-        guard let url = URL(string: Enpoint.cityCoordinates(city, 5, config.environment.key).path) else {
+        guard let url = URL(string: Enpoint.cityCoordinates(city, 5, config.environment.key).path, relativeTo: config.environment.baseURL) else {
             handleError(error: NetworkError.badUrl)
             return
         }
+        print(url.absoluteURL)
         
         getRequesWith(type: Coordinates.Coordinates.self, url: url) { [weak self] result in
             switch result {
@@ -64,7 +64,7 @@ extension TodayInteractor: TodayBusinessLogic{
     
     func fetchWether(cityModel: Coordinates.Coordinate) {
         
-        guard let url = URL(string: Enpoint.currentWeather(cityModel.lat, cityModel.lon, config.environment.key).path) else {
+        guard let url = URL(string: Enpoint.currentWeather(cityModel.lat, cityModel.lon, config.environment.key).path, relativeTo: config.environment.baseURL) else {
             handleError(error: NetworkError.badUrl)
             return
         }

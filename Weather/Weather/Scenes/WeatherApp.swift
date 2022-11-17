@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct WeatherApp: App {
+    // MARK: - PROPERTY
+   
+    // MARK: - INIT
+   
+    // MARK: - BODY
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TodayView().configureView()
         }
     }
 }
