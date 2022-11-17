@@ -27,6 +27,7 @@ class TodayInteractor {
     
     // MARK: - ACTION
     func handleError(error:NetworkError) {
+        print(error)
         presenter?.presentError(response: error)
     }
     
@@ -50,7 +51,7 @@ extension TodayInteractor: TodayBusinessLogic{
             handleError(error: NetworkError.badUrl)
             return
         }
-        print(url.absoluteURL)
+        
         
         getRequesWith(type: Coordinates.Coordinates.self, url: url) { [weak self] result in
             switch result {
@@ -69,7 +70,10 @@ extension TodayInteractor: TodayBusinessLogic{
             return
         }
         
+        print(url.absoluteURL)
+        
         getRequesWith(type: CurrentWeather.CurrentWeather.self, url: url) { [weak self] result in
+            
             switch result {
             case .success(let currentWeather):
                 self?.fetchWetherSucess(currentWeather: currentWeather)

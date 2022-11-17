@@ -20,7 +20,7 @@ func getRequesWith<T: Codable>(type: T.Type, url: URL, completion: @escaping (Re
                 completion(.failure(NetworkError.badRequest))
                 return
             }
-            
+     
             do {
                 let decode = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decode))

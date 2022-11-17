@@ -13,3 +13,14 @@ import SwiftUI
 var backgroundGradient: LinearGradient {
     return LinearGradient(gradient: Gradient(colors: [Color("mediumPurple"), Color("iris")]), startPoint: .topLeading, endPoint: .bottomTrailing)
 }
+
+
+func convertTempKelvinToCelsius(kelvin: Double) -> Double {
+    let celsiusTemp = kelvin - 273.15
+    return celsiusTemp
+}
+
+func convertTempKelvinToFaranheit(kelvin: Double) -> Double  {
+    let faranhei = ((9/5) * (kelvin - 273)) + 32
+    return faranhei
+}

@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBarView: View {
     // MARK: - PROPERTY
     @Binding var searchText: String
+    @Binding var placeholder: String
     
     
     // MARK: - BODY
@@ -19,7 +20,7 @@ struct SearchBarView: View {
             Image(systemName: "location.magnifyingglass")
                 .foregroundColor(.gray)
             
-            TextField("city name, state code, country code", text: $searchText)
+            TextField(placeholder, text: $searchText)
                 .foregroundColor(.gray)
                 
             
@@ -49,7 +50,7 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(searchText: .constant(""))
+        SearchBarView(searchText: .constant(""), placeholder: .constant("city name"))
             .previewLayout(.sizeThatFits)
     }
 }

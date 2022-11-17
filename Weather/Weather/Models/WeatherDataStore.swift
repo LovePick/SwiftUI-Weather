@@ -10,5 +10,9 @@ import SwiftUI
 
 @MainActor
 class WeatherDataStore: ObservableObject {
+    
     @Published var displaySearchCity: Coordinates.Coordinates = []
+    @Published var currentWeather: CurrentWeather.CurrentWeather? = nil
+    @Published var selectUnit: TodayModel.TempUnit = .c
+    @Published var cityWeather: WeatherDetailmodel = WeatherDetailmodel(selectUnit: .c, tempKelvin: 0, windSpeed: 0, humidity: 0, icon: "10d", main: "Rain")
 }

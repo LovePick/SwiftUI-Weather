@@ -8,6 +8,12 @@
 import Foundation
 
 enum TodayModel {
+    enum TempUnit: String {
+        case c = "C"
+        case f = "F"
+        
+    }
+    
     enum FetchCity {
         struct Request {
             var city: String
