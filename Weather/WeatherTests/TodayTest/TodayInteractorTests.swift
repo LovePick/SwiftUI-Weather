@@ -54,7 +54,24 @@ class TodayInteractorTests: XCTestCase {
         sut.fetchCityLocation(city: "London")
         DispatchQueue.main.async { [weak self] in
             XCTAssertNotNil(self?.presenterSpy.cityList)
+            XCTAssertEqual(self?.presenterSpy.cityList![0].name, "London")
         }
-        
+    }
+    
+    func testFetchWeather() {
+        let city = Coordinates.Coordinate(name: "London", localNames: ["af": "Londen"], lat: 42.9834, lon: -81.233, country: "CA", state: "")
+        sut.fetchWether(cityModel: city)
+        DispatchQueue.main.async { [weak self] in
+            XCTAssertNotNil(self?.presenterSpy.currentWeather)
+            XCTAssertNotNil(self?.presenterSpy.currentWeather?.weather)
+        }
+    }
+    
+    func testFetchError(){
+        let city = Coordinates.Coordinate(name: "London", localNames: ["af": "Londen"], lat: 942.9834, lon: 0, country: "CA", state: "")
+        sut.fetchWether(cityModel: city)
+        DispatchQueue.main.async { [weak self] in
+            XCTAssertNotNil(self?.presenterSpy.error)
+        }
     }
 }
