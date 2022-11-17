@@ -63,7 +63,8 @@ struct TodayView: View, TodayViewDisplayLogic {
                         
                         if( model.currentWeather != nil ) {
                             NavigationLink {
-                                Text("Test")
+                                ForecastView(city: selectCity ?? Coordinates.Coordinate(name: "London", localNames: ["af": "Londen"], lat: 51.5085, lon: -0.1257, country: "GB", state: ""), weather: model.currentWeather!, detail: $model.cityWeather).configureView()
+                                
                             } label: {
                                 Label("Forecast", systemImage: "arrow.up.left.and.arrow.down.right.circle")
                                     .foregroundColor(.white)
@@ -90,6 +91,7 @@ struct TodayView: View, TodayViewDisplayLogic {
                                 } label: {
                                     HStack(spacing: 8){
                                         Image(systemName: "mappin.and.ellipse")
+                                            .foregroundColor(.black)
                                         
                                         Text("\(item.name), \(item.state)")
                                             .foregroundColor(.black)
@@ -116,9 +118,14 @@ struct TodayView: View, TodayViewDisplayLogic {
             )
             .onAppear() {
                 dateToday = getDateToday()
+                
+                if(selectCity == nil){
+                    mockCity()
+                }
             }
            
         }//: NAVIGATIONVIEW
+        .accentColor(.white)
     }
 }
 
@@ -151,6 +158,12 @@ extension TodayView {
         return dateFormatter.string(from: date)
     }
     
+    
+    func mockCity() {
+        let city = Coordinates.Coordinate(name: "Bangkok", localNames: ["th": "กรุงเทพมหานคร"], lat: 13.7524938, lon: 100.4935089, country: "TH", state: "Bangkok")
+        selectCity = city
+        interactor?.fetchWether(cityModel: city)
+    }
 }
 
 // MARK: - TodayViewDisplayLogic

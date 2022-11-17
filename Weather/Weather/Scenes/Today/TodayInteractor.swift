@@ -14,7 +14,7 @@ protocol TodayBusinessLogic {
     func fetchWether(cityModel: Coordinates.Coordinate)
 }
 
-class TodayInteractor {
+class TodayInteractor: TodayBusinessLogic {
     
     // MARK: - PROPERTY
     private var config:Configuration
@@ -44,7 +44,7 @@ class TodayInteractor {
 }
 
 // MARK: - TodayBusinessLogic
-extension TodayInteractor: TodayBusinessLogic{
+extension TodayInteractor {
     func fetchCityLocation(city: String) {
         
         guard let url = URL(string: Enpoint.cityCoordinates(city, 5, config.environment.key).path, relativeTo: config.environment.baseURL) else {

@@ -22,6 +22,7 @@ struct SearchBarView: View {
             
             TextField(placeholder, text: $searchText)
                 .foregroundColor(.gray)
+                .accentColor(.black)
                 
             
             if !searchText.isEmpty {

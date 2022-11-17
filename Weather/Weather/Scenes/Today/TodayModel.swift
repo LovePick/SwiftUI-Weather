@@ -6,20 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum TodayModel {
     enum TempUnit: String {
         case c = "C"
         case f = "F"
-        
     }
     
     enum FetchCity {
-        struct Request {
-            var city: String
-            var limit: Int
-            var apiKey: String
-        }
+        struct Request { }
         
         struct Response {
             var coordinates: Coordinates.Coordinates
@@ -27,17 +23,21 @@ enum TodayModel {
     }
     
     enum FetchWeather {
-        struct Request {
-            var lat: Double
-            var lon: Double
-        }
+        struct Request { }
         
         struct Response {
             var weather: CurrentWeather.CurrentWeather
         }
     }
     
-    struct ViewModel {
-       
-    }
+    struct ViewModel {}
+}
+
+@MainActor
+class WeatherDataStore: ObservableObject {
+    
+    @Published var displaySearchCity: Coordinates.Coordinates = []
+    @Published var currentWeather: CurrentWeather.CurrentWeather? = nil
+    @Published var selectUnit: TodayModel.TempUnit = .c
+    @Published var cityWeather: WeatherDetailmodel = WeatherDetailmodel(selectUnit: .c, tempKelvin: 0, windSpeed: 0, humidity: 0, icon: "10d", main: "Rain")
 }

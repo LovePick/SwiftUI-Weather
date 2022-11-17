@@ -122,13 +122,22 @@ struct WeathereDetailView: View {
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 8){
-                    Text("Wind")
+                    Text("Wind Speed")
                         .foregroundColor(Color("antiFlashWhite"))
                         .font(.system(.headline, design: .rounded))
                     
-                    Text(String(format: "%.1f", model.windSpeed))
-                        .foregroundColor(Color.white)
-                        .font(.system(.title, weight: .semibold))
+                    HStack (alignment: .bottom){
+                        Text(String(format: "%.1f", model.windSpeed))
+                            .foregroundColor(Color.white)
+                            .font(.system(.title, weight: .semibold))
+                        
+                        Text("meter/sec")
+                            .font(.system(.footnote, design: .rounded))
+                            .foregroundColor(Color.white)
+                            .padding(.bottom, 4)
+                        
+                    }
+                    
                     
                     
                     
@@ -171,7 +180,6 @@ extension WeathereDetailView {
         }
         
     }
-    
     
 }
 // MARK: - PREVIEW
